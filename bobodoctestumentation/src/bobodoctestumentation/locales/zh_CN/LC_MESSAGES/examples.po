@@ -1,0 +1,492 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2014, Jim Fulton
+# This file is distributed under the same license as the bobo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bobo 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-01 23:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../examples.txt:2
+msgid "Examples"
+msgstr ""
+
+#: ../../examples.txt:5
+msgid "File-system-based wiki"
+msgstr ""
+
+#: ../../examples.txt:7
+msgid ""
+"In this section, we present a wiki implementation that stores wiki "
+"documents in a file-system directory:"
+msgstr ""
+
+#: ../../examples.txt:14
+msgid ""
+"We need to know the name of the directory to store the files in.  On line"
+" 3, we define a configuration function, ``config``."
+msgstr ""
+
+#: ../../examples.txt:17
+msgid "To run this with the bobo server, we'll use the command line::"
+msgstr ""
+
+#: ../../examples.txt:21
+msgid "This tells bobo to:"
+msgstr ""
+
+#: ../../examples.txt:23
+msgid "run the file ``fswiki.py``"
+msgstr ""
+
+#: ../../examples.txt:24
+msgid "pass configuration information to it's config function on start up, and"
+msgstr ""
+
+#: ../../examples.txt:25
+msgid "pass the configuration directory setting of ``'wikidocs'``."
+msgstr ""
+
+#: ../../examples.txt:27
+msgid ""
+"On line 11, we define an ``index`` method to handle ``/`` that lists the "
+"documents in the wiki."
+msgstr ""
+
+#: ../../examples.txt:30
+msgid ""
+"On line 22, we define a post resource, ``save``, for a post to a named "
+"document that saves the body submitted and redirects to the same URL."
+msgstr ""
+
+#: ../../examples.txt:33
+msgid ""
+"On line 27, we define a query, ``get``, for the named document that "
+"displays it if it exists, otherwise, it displays a creation page. Also, "
+"if the ``edit`` form variable is present, an editing interface is "
+"presented.  By default, queries will accept POST requests, however, "
+"because the ``save`` function comes first, it is used for POST requests "
+"before the get function."
+msgstr ""
+
+#: ../../examples.txt:40
+msgid ""
+"Both the editing and creation interfaces use an edit template, which is "
+"just a Python string read from a file that provides a form. In this case,"
+" we use Dojo to provide an HTML editor for the body:"
+msgstr ""
+
+#: ../../examples.txt:51
+msgid "File-based wiki with authentication and (minimal) authorization"
+msgstr ""
+
+#: ../../examples.txt:53
+msgid ""
+"Traditionally, wikis allowed anonymous edits.  Sometimes though, you want"
+" to require log in to make changes.  In this example, we extend the file-"
+"based wiki to require authentication to make changes."
+msgstr ""
+
+#: ../../examples.txt:57
+msgid ""
+"Bobo doesn't provide any authentication support itself.  To provide "
+"authentication support for bobo applications, you'll typically use either"
+" an application library, or WSGI middleware.  Middleware is attractive "
+"because there are a number of middleware authentication implementations "
+"available and because authentication is generally something you want to "
+"apply in blanket fashion to an entire application."
+msgstr ""
+
+#: ../../examples.txt:65
+msgid ""
+"In this example, we'll use the repoze.who authentication middleware "
+"component, in part because it integrates well using PasteDeploy."
+msgstr ""
+
+#: ../../examples.txt:72
+msgid ""
+"We've added 2 new pages, ``login.html`` and ``logout.html``, to our "
+"application, starting on line 11."
+msgstr ""
+
+#: ../../examples.txt:75
+msgid ""
+"The login page illustrates 2 common properties of authentication "
+"middleware:"
+msgstr ""
+
+#: ../../examples.txt:78
+msgid ""
+"The authentication user id is provided in the ``REMOTE_USER`` environment"
+" variable and made available in the ``remote_user`` request attribute."
+msgstr ""
+
+#: ../../examples.txt:82
+msgid ""
+"We signal to middleware that it should ask for credentials by returning a"
+" response with a 401 status."
+msgstr ""
+
+#: ../../examples.txt:85
+msgid ""
+"The login method uses remote_user to check whether a user is "
+"authenticated. If they are, it redirects them back to the URL from which "
+"they were sent to the login page. Otherwise, a 401 response is returned, "
+"which triggers repoze.who to present a log in form."
+msgstr ""
+
+#: ../../examples.txt:90
+msgid ""
+"The log out form redirects the user back to the page they came from after"
+" deleting the authentication cookie.  The authentication cookie is "
+"configured in the repoze.who configuration file, ``who.ini``."
+msgstr ""
+
+#: ../../examples.txt:94
+msgid ""
+"We're going to want most pages to have links to the login and logout "
+"pages, and to display the logged in user, as appropriate. We provided "
+"some helper functions starting on line 23 for getting log in and log out "
+"URLs and for rendering a part of a page that either displays a log in "
+"link or the logged-in user and a log out link."
+msgstr ""
+
+#: ../../examples.txt:100
+msgid ""
+"The ``index`` function is modified to add the user info and log in or log"
+" out links."
+msgstr ""
+
+#: ../../examples.txt:103
+msgid ""
+"The ``save`` function illustrates a feature of the ``query``, ``post``, "
+"and ``resource`` decorators that's especially useful for adding "
+"authorization checks.  The ``save`` function can't be used at all unless "
+"a user is authenticated.  We can pass a check function to the decorator "
+"that can compute a response if calling the underlying function isn't "
+"appropriate.  In this case, we use an ``authenticated`` function that "
+"returns a redirect response if a user isn't authenticated."
+msgstr ""
+
+#: ../../examples.txt:111
+msgid ""
+"The ``save`` method is modified to check whether the user is "
+"authenticated and to redirect to the login page if they're not."
+msgstr ""
+
+#: ../../examples.txt:114
+msgid "The ``get`` function is modified to:"
+msgstr ""
+
+#: ../../examples.txt:116
+msgid "Display user information and log-in/log-out links"
+msgstr ""
+
+#: ../../examples.txt:117
+msgid ""
+"Present a not-found page with a log-in link if the page doesn't exist and"
+" the user isn't logged in."
+msgstr ""
+
+#: ../../examples.txt:120
+msgid "Some notes about this example:"
+msgstr ""
+
+#: ../../examples.txt:122
+msgid ""
+"The example implements a very simple *authorization* model.  A user can "
+"add or edit content if they're logged in.  Otherwise they can't."
+msgstr ""
+
+#: ../../examples.txt:125
+msgid ""
+"All the application knows about a user is their id.  The authentication "
+"plug-in passes their log in name as their id.  A more sophisticated plug-"
+"in would pass a less descriptive identifier and it would be up to the "
+"application to look up descriptive information from a user database based"
+" on this information."
+msgstr ""
+
+#: ../../examples.txt:134
+msgid "Assembling and running the example with Paste Deployment and Paste Script"
+msgstr ""
+
+#: ../../examples.txt:136
+msgid ""
+"To use WSGI middleware, we'll use `Paste Deployment "
+"<http://pythonpaste.org/deploy/>`_ to configure the middleware and our "
+"application and to knit them together.  Here's the configuration file:"
+msgstr ""
+
+#: ../../examples.txt:143
+msgid "The configuration defines 5 WSGI components, in 5 sections:"
+msgstr ""
+
+#: ../../examples.txt:146
+msgid "``server:main``"
+msgstr ""
+
+#: ../../examples.txt:146
+msgid "This section configures a simple HTTP server running on port 8080."
+msgstr ""
+
+#: ../../examples.txt:170
+msgid "``app:main``"
+msgstr ""
+
+#: ../../examples.txt:149
+msgid "This section configures our application.  The options:"
+msgstr ""
+
+#: ../../examples.txt:153
+msgid "``use``"
+msgstr ""
+
+#: ../../examples.txt:152
+msgid ""
+"The ``use`` option instructs Paste Deployment to run the bobo main "
+"application."
+msgstr ""
+
+#: ../../examples.txt:157
+msgid "``bobo_resources``"
+msgstr ""
+
+#: ../../examples.txt:156
+msgid ""
+"The ``bobo_resources`` option tells bobo to run the application in the "
+"module ``bobodoctestumentation.fswikia``."
+msgstr ""
+
+#: ../../examples.txt:161
+msgid "``bobo_configure``"
+msgstr ""
+
+#: ../../examples.txt:160
+msgid ""
+"The ``bobo_configure`` option tells bobo to call the config function with"
+" the configuration options."
+msgstr ""
+
+#: ../../examples.txt:165
+msgid "``directory``"
+msgstr ""
+
+#: ../../examples.txt:164
+msgid ""
+"The ``directory`` option is used by the application to determine where to"
+" store wiki pages."
+msgstr ""
+
+#: ../../examples.txt:170
+msgid "``filter-with``"
+msgstr ""
+
+#: ../../examples.txt:168
+msgid ""
+"The ``filter-with`` option tells Paste Deployment to apply the reload "
+"middleware, defined by the ``filter:reload`` section to the application."
+msgstr ""
+
+#: ../../examples.txt:179
+msgid "``filter:reload``"
+msgstr ""
+
+#: ../../examples.txt:173
+msgid ""
+"The ``filter:reload`` section defines a middleware component that reloads"
+" given modules when their sources change.  It's provided by the bobo egg "
+"under the name ``reload``, as indicated by the ``use`` option."
+msgstr ""
+
+#: ../../examples.txt:178
+msgid ""
+"The ``filter-with`` option is used to apply yet another filter, ``who`` "
+"to the reload middleware."
+msgstr ""
+
+#: ../../examples.txt:194
+msgid "``filter:who``"
+msgstr ""
+
+#: ../../examples.txt:182
+msgid ""
+"The ``filter:who`` section configures a repose.who authentication "
+"middleware component.  It uses the ``config_file`` option to specify a "
+"repoze.who configuration file, ``who.ini``:"
+msgstr ""
+
+#: ../../examples.txt:189
+msgid ""
+"See the `repoze.who documentation <http://static.repoze.org/whodocs/>`_ "
+"for details of configuring repoze.who."
+msgstr ""
+
+#: ../../examples.txt:193
+msgid ""
+"The ``filter-with`` option is used again here to apply a final middleware"
+" component, ``debug``."
+msgstr ""
+
+#: ../../examples.txt:199
+msgid "``filter:debug``"
+msgstr ""
+
+#: ../../examples.txt:197
+msgid ""
+"The ``filter:debug`` section defines a post-mortem debugging middleware "
+"component that allows us to debug exceptions raised by the application, "
+"or by the other 2 middleware components."
+msgstr ""
+
+#: ../../examples.txt:201
+msgid ""
+"In this example, we apply 3 middleware components to the bobo "
+"application. When a request comes in:"
+msgstr ""
+
+#: ../../examples.txt:204
+msgid "The server calls the debug component."
+msgstr ""
+
+#: ../../examples.txt:206
+msgid ""
+"The debug component calls the who component.  If an exception is raised, "
+"the ``pdb.post_mortem`` debugger is invoked."
+msgstr ""
+
+#: ../../examples.txt:210
+msgid ""
+"The who component checks for credentials and sets ``REMOTE_USER`` in the "
+"request environment if they are present. It then calls the reload "
+"component.  If the response from the reload component has a 401 status, "
+"it presents a log in form."
+msgstr ""
+
+#: ../../examples.txt:215
+msgid ""
+"The reload component checks to see if any of it's configured module "
+"sources have changed. If so, it reloads the modules and reinitializes "
+"it's application. (The reload component knows how to reinitialize bobo "
+"applications and can only be used with bobo application objects.)"
+msgstr ""
+
+#: ../../examples.txt:221
+msgid "The reload component calls the bobo application."
+msgstr ""
+
+#: ../../examples.txt:223
+msgid ""
+"The configuration above is intended to support development.  A production"
+" configuration would omit the ``reload`` and ``debug`` components::"
+msgstr ""
+
+#: ../../examples.txt:242
+msgid "To run the application in the foreground, we'll use::"
+msgstr ""
+
+#: ../../examples.txt:246
+msgid ""
+"For this to work, the ``paster`` script must be installed in such a way "
+"that PasteScript, repoze.who, bobo, the wiki application module, and all "
+"their dependencies are all importable.  This can be done either by "
+"installing all of the necessary packages into a (real or `virtual "
+"<http://pypi.python.org/pypi/virtualenv>`_) Python, or using `zc.buildout"
+" <http://www.buildout.org/>`_."
+msgstr ""
+
+#: ../../examples.txt:253
+msgid "To run this example, I used a buildout that defined a ``paste`` part::"
+msgstr ""
+
+#: ../../examples.txt:261
+msgid ""
+"The bobodoctestumentation package is a package that includes the examples"
+" used in this documentation and depends on bobo.  Because the "
+"configuration files are in the ``bobodoctestumentation`` source "
+"directory, I actually ran the application this way::"
+msgstr ""
+
+#: ../../examples.txt:270
+msgid "Ajax calculator"
+msgstr ""
+
+#: ../../examples.txt:272
+msgid ""
+"This example shows how the ``application/json`` content type can be used "
+"in ajax [#ajax]_ applications.  We implement a small (silly) ajax "
+"calculator application:"
+msgstr ""
+
+#: ../../examples.txt:280
+msgid "The ``html`` method returns the application page:"
+msgstr ""
+
+#: ../../examples.txt:286
+msgid ""
+"This page presents a value, and input field and clear (C), add (+) and "
+"subtract (-) buttons.  When the user selects the add or subtract buttons,"
+" an ajax request is made to the server. The ajax request passes the input"
+" and current value as form data to the ``add`` or ``sub`` resources on "
+"the server."
+msgstr ""
+
+#: ../../examples.txt:292
+msgid ""
+"The ``add`` and ``sub`` methods in ``bobocalc.py`` simply convert their "
+"arguments to integers and compute a new value which they return in a "
+"dictionary. Because we used the ``application/json`` content type, the "
+"dictionaries returned are marshaled as JSON."
+msgstr ""
+
+#: ../../examples.txt:298
+msgid "Static resources"
+msgstr ""
+
+#: ../../examples.txt:300
+msgid ""
+"We provide a resource that serves a static file-system directory. This is"
+" useful for serving static resources such as javascript source and CSS."
+msgstr ""
+
+#: ../../examples.txt:308
+msgid "This example illustrates:"
+msgstr ""
+
+#: ../../examples.txt:312
+msgid "traversal"
+msgstr ""
+
+#: ../../examples.txt:311
+msgid ""
+"The ``Directory.traverse`` method enables directories to be traversed "
+"with a name to get to sub-directories or files."
+msgstr ""
+
+#: ../../examples.txt:317
+msgid "use of the :class:`bobo.NotFound` exception"
+msgstr ""
+
+#: ../../examples.txt:315
+msgid ""
+"Rather than construct a not-found ourselves, we simply raise "
+"bobo.NotFound, and let bobo generate the response for us."
+msgstr ""
+
+#: ../../examples.txt:321
+msgid ""
+"This isn't strictly \"Ajax\", because there's no XML involved. The "
+"requests we're making are asynchronous and pass data as form data and "
+"generally expect response data to be formatted as JSON."
+msgstr ""
+

@@ -22,3 +22,5 @@ lib/
 lib64
 parts/
 pyvenv.cfg
+_build/
+*.mo

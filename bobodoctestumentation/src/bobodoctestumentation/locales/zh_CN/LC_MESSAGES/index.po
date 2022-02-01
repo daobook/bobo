@@ -1,0 +1,652 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2014, Jim Fulton
+# This file is distributed under the same license as the bobo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bobo 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-01 23:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../index.txt:2
+msgid "Introduction"
+msgstr "简介"
+
+#: ../../index.txt:4
+msgid ""
+"Bobo is a light-weight framework for creating `WSGI <http://wsgi.org>`_ "
+"web applications."
+msgstr ""
+"Bobo 是轻量级框架，用于创建 `WSGI <http://wsgi.org>`_ web应用程序。"
+
+#: ../../index.txt:7
+msgid "Its goal is to be easy to learn and remember."
+msgstr "它的目标是容易学习和记忆。"
+
+#: ../../index.txt:9
+msgid "It provides 2 features:"
+msgstr "它提供了 2 个特性："
+
+#: ../../index.txt:11
+msgid "Mapping URLs to objects"
+msgstr "将 URL 映射到对象"
+
+#: ../../index.txt:13
+msgid "Calling objects to generate HTTP responses"
+msgstr "调用对象来生成 HTTP 响应"
+
+#: ../../index.txt:15
+msgid ""
+"It doesn't have a templating language, a database integration layer, or a"
+" number of other features that can be provided by WSGI middle-ware or "
+"application-specific libraries."
+msgstr ""
+"它没有模板语言，没有数据库集成层，也没有 WSGI 中间件或特定于应用程序的库可以提供的许多其他特性。"
+
+#: ../../index.txt:19
+msgid ""
+"Bobo builds on other frameworks, most notably WSGI and `WebOb "
+"<http://pythonpaste.org/webob/>`_."
+msgstr ""
+"Bobo 建立在其他框架之上，最显著的是 WSGI 和 `WebOb <http://pythonpaste.org/webob/>`_。"
+
+#: ../../index.txt:25
+msgid "Installation"
+msgstr "安装"
+
+#: ../../index.txt:27
+msgid ""
+"Bobo can be installed in the usual ways, including using the `setup.py "
+"install command <http://docs.python.org/install/index.html#the-new-"
+"standard-distutils>`_. You can, of course, use `Easy Install "
+"<http://peak.telecommunity.com/DevCenter/EasyInstall>`_, `Buildout "
+"<http://www.buildout.org>`_, or `pip <http://pip.openplans.org/>`_."
+msgstr ""
+
+#: ../../index.txt:34
+msgid ""
+"To use the setup.py install command, download and unpack the `source "
+"distribution <http://pypi.python.org/pypi/bobo>`_ and run the setup "
+"script::"
+msgstr ""
+
+#: ../../index.txt:40
+msgid "To run bobo's tests, just use the test command::"
+msgstr "要运行 bobo 的测试，只需使用 test 命令 ::"
+
+#: ../../index.txt:44
+msgid "You can do this before or after installation."
+msgstr "您可以在安装之前或之后执行此操作。"
+
+#: ../../index.txt:46
+msgid ""
+"Bobo works with Python 2.4, 2.5, and 2.6.  Python 3.0 support is planned."
+" Of course, when using Python 2.4 and 2.5, class decorator syntax can't "
+"be used. You can still use the decorators by calling them with a class "
+"after a class is created."
+msgstr ""
+
+#: ../../index.txt:52
+msgid "Getting Started"
+msgstr "获得开始"
+
+#: ../../index.txt:54
+msgid ""
+"Let's create a minimal web application, \"hello world\". We'll put it in "
+"a file named \"hello.py\"::"
+msgstr ""
+"让我们创建最小的 web 应用程序，\"hello world\"。"
+"我们将它放在一个名为 \"hello.py\" 的文件中 ::"
+
+#: ../../index.txt:70
+msgid ""
+"This application creates a single web resource, \"/hello.html\", that "
+"simply outputs the text \"Hello world\"."
+msgstr ""
+"这个应用程序创建了单一的 web 资源，\"/hello.html\"，它只输出文本 \"Hello world\"。"
+
+#: ../../index.txt:73
+msgid ""
+"Bobo decorators, like ``bobo.query`` used in the example above control "
+"how URLs are mapped to objects. They also control how functions are "
+"called and returned values converted to web responses. If a function "
+"returns a string, it's assumed to be HTML and used to construct a "
+"response.  You can control the content type used by passing a "
+"content_type keyword argument to the decorator."
+msgstr ""
+"Bobo 装饰器，像上面例子中使用的 ``bobo.query`` 控制 url 如何映射到对象。"
+"它们还控制如何调用函数以及如何将返回值转换为 web 响应。"
+"如果函数返回一个字符串，则假定它是 HTML 并用于构造响应。"
+"你可以通过传递 content_type 关键字参数给装饰器来控制使用的内容类型。”"
+
+#: ../../index.txt:80
+msgid ""
+"Let's try out our application.  Assuming that bobo's installed, you can "
+"run the application on port 8080 using [#bobooptions]_::"
+msgstr ""
+"试试我们的应用程序。"
+"假设安装了 bobo，您可以使用 [#bobooptions]_ 在端口 8080 上运行应用程序 ::"
+
+#: ../../index.txt:85
+msgid ""
+"This will start a web server running on localhost port 8080.  If you "
+"visit::"
+msgstr ""
+"这将启动在本地主机端口 8080 上运行的 web 服务器。如果你访问 ::"
+
+#: ../../index.txt:93
+msgid "you'll get the greeting::"
+msgstr "你会受到欢迎的 ::"
+
+#: ../../index.txt:103
+msgid ""
+"The URL we used to access the application was determined by the name of "
+"the resource function and the content type used by the decorator, which "
+"defaults to \"text/html; charset=UTF-8\". Let's change the application so"
+" we can use a URL like::"
+msgstr ""
+"用来访问应用程序的 URL 是由资源函数的名称和装饰器使用的内容类型决定的，"
+"它默认为 \"text/html; charset=UTF-8\"。"
+"改变应用程序，这样我们可以使用 URL ::"
+
+#: ../../index.txt:113
+msgid "We'll do this by providing a URL path::"
+msgstr "我们将通过提供 URL 路径来做到这一点 ::"
+
+#: ../../index.txt:126
+msgid ""
+"Here, we passed a path to the ``query`` decorator.  We used a '/' string,"
+" which makes a URL like the one above work. (We also omitted the import "
+"for brevity.)"
+msgstr ""
+"“在这里，传递了路径给 ``query`` 装饰器。"
+"使用了 '/' 字符串，这使类似于上面的 URL 工作。"
+"（为了简洁起见，我们也省略了重要性。）"
+
+#: ../../index.txt:130
+msgid ""
+"We don't need to restart the server to see our changes.  The bobo "
+"development server automatically reloads the file if it changes."
+msgstr ""
+"不需要重新启动服务器来查看更改。如果文件发生变化，bobo 开发服务器会自动重新加载文件。"
+
+#: ../../index.txt:133
+msgid ""
+"As its name suggests, the ``query`` decorator is meant to work with "
+"resources that return information, possibly using form data.  Let's "
+"modify the application to allow the name of the person to greet to be "
+"given as form data::"
+msgstr ""
+"顾名思义，``query`` 装饰器是用来处理返回信息的资源的，可能使用的是表单数据。"
+"修改应用程序，以允许将要问候的人的姓名作为表单数据 ::"
+
+#: ../../index.txt:149
+msgid ""
+"If a function accepts named arguments, then data will be supplied from "
+"form data.  If we visit::"
+msgstr ""
+"如果函数接受命名参数，则数据将从表单数据中提供。如果访问 ::"
+
+#: ../../index.txt:157
+msgid "We'll get the output::"
+msgstr "将获得输出 ::"
+
+#: ../../index.txt:167
+msgid ""
+"The ``query`` decorator will accept ``GET``, ``POST`` and ``HEAD`` "
+"requests. It's appropriate when server data aren't modified.  To accept "
+"form data and modify data on a server, you should use the ``post`` "
+"decorator. The ``post`` decorator works like the ``query`` decorator "
+"except that it only allows ``POST`` requests and won't pass data provided"
+" in a query string as function arguments."
+msgstr ""
+"``query`` 装饰器将接受 ``GET``，``POST`` 和 ``HEAD`` 请求。"
+"当服务器数据没有被修改时，这是合适的。"
+"要在服务器上接受表单数据和修改数据，应该使用 ``post`` 装饰器。"
+"``post`` 装饰器的工作原理类似于 ``query`` 装饰器，只是它只允许  ``POST`` 请求，"
+"并且不会将查询字符串中提供的数据作为函数参数传递。"
+
+#: ../../index.txt:203
+msgid ""
+"The ``query`` and ``post`` decorators are convenient when you want to "
+"just get user input passed as function arguments.  If you want a bit more"
+" control, you can also get the request object by defining a "
+"``bobo_request`` parameter::"
+msgstr ""
+"当你只想让用户输入作为函数参数传递时，``query`` 和 ``post`` 装饰器是很方便的。"
+"如果你想要更多的控制，你也可以通过定义 ``bobo_request`` 参数来获得请求对象 ::"
+
+#: ../../index.txt:219
+msgid ""
+"The request object gives full access to all of the form data, as well as "
+"other information, such as cookies and input headers."
+msgstr ""
+"请求对象提供对所有表单数据以及其他信息(如 cookie 和输入头)的完全访问权。"
+
+#: ../../index.txt:222
+msgid ""
+"The ``query`` and ``post`` decorators introspect the function they're "
+"applied to. This means they can't be used with callable objects that "
+"don't provide function meta data.  There's a low-level decorator, "
+"``resource`` that does no introspection and can be used with any "
+"callable::"
+msgstr ""
+
+#: ../../index.txt:240
+msgid ""
+"The ``resource`` decorator always passes the request object as the first "
+"positional argument to the callable it's given."
+msgstr ""
+
+#: ../../index.txt:244
+msgid "Automatic response generation"
+msgstr ""
+
+#: ../../index.txt:246
+msgid ""
+"The :func:`resource`, :func:`post`, and :func:`query` decorators provide "
+"automatic response generation when the value returned by an application "
+"isn't a :term:`response` object.  The generation of the response is "
+"controlled by the content type given to the ``content_type`` decorator "
+"parameter."
+msgstr ""
+
+#: ../../index.txt:252
+msgid ""
+"If an application returns a string, then a response is constructed using "
+"the string with the content type."
+msgstr ""
+
+#: ../../index.txt:255
+msgid ""
+"If an application doesn't return a response or a string, then the "
+"handling depends on whether or not the content type is "
+"``'application/json``. For ``'application/json``, the returned value is "
+"marshalled to JSON using the ``json`` (or ``simplejson``) module, if "
+"present.  If the module isn't importable, or if marshaling fails, then an"
+" exception will be raised."
+msgstr ""
+
+#: ../../index.txt:262
+msgid ""
+"If an application returns a unicode string and the content type isn't "
+"``'application/json'``, the string is encoded using the character set "
+"given in the content_type, or using the UTF-8 encoding, if the content "
+"type doesn't include a charset parameter."
+msgstr ""
+
+#: ../../index.txt:268
+msgid ""
+"If an application returns a non-response non-string result and the "
+"content type isn't ``'application/json'``, then an exception is raised."
+msgstr ""
+
+#: ../../index.txt:272
+msgid ""
+"If an application wants greater control over a response, it will "
+"generally want to construct a `webob.Response "
+"<http://pythonpaste.org/webob/reference.html#id2>`_ object and return "
+"that."
+msgstr ""
+
+#: ../../index.txt:280
+msgid "Routes"
+msgstr ""
+
+#: ../../index.txt:282
+msgid ""
+"We saw earlier that we could control the URLs used to access resources by"
+" passing a path to a decorator. The path we pass can specify a multi-"
+"level URL and can have placeholders, which allow us to pass data to the "
+"resource as part of the URL."
+msgstr ""
+
+#: ../../index.txt:287
+msgid ""
+"Here, we modify the hello application to let us pass the name of the "
+"greeter in the URL::"
+msgstr ""
+
+#: ../../index.txt:299
+msgid "Now, to access the resource, we use a URL like::"
+msgstr ""
+
+#: ../../index.txt:306 ../../index.txt:344
+msgid "for which we get the output::"
+msgstr ""
+
+#: ../../index.txt:316
+msgid ""
+"We call these paths :term:`routes` because they use a syntax inspired "
+"loosely by the `Ruby on Rails Routing "
+"<http://api.rubyonrails.org/classes/ActionController/Routing.html>`_ "
+"system."
+msgstr ""
+
+#: ../../index.txt:321
+msgid ""
+"You can have any number of placeholders or constant URL paths in a route."
+"  The values associated with the placeholders will be made available as "
+"function arguments."
+msgstr ""
+
+#: ../../index.txt:325
+msgid ""
+"If a placeholder is followed by a question mark, then the route segment "
+"is optional.  If we change the hello example::"
+msgstr ""
+
+#: ../../index.txt:337
+msgid "we can use the URL::"
+msgstr ""
+
+#: ../../index.txt:354
+msgid "Note, however, if we use the URL::"
+msgstr ""
+
+#: ../../index.txt:361
+msgid "we get the output::"
+msgstr ""
+
+#: ../../index.txt:371
+msgid ""
+"Placeholders must be legal Python identifiers.  A placeholder may be "
+"followed by an extension.  For example, we could use::"
+msgstr ""
+
+#: ../../index.txt:383
+msgid ""
+"Here, we've said that the name must have an \".html\" suffix.  To access "
+"the function, we use a URL like::"
+msgstr ""
+
+#: ../../index.txt:391
+msgid "And get::"
+msgstr ""
+
+#: ../../index.txt:401
+msgid "If the placeholder is optional::"
+msgstr ""
+
+#: ../../index.txt:412
+msgid "Then we can use a URL like::"
+msgstr ""
+
+#: ../../index.txt:422
+msgid "or::"
+msgstr ""
+
+#: ../../index.txt:434
+msgid "Subroutes"
+msgstr ""
+
+#: ../../index.txt:436
+msgid ""
+"Sometimes, you want to split URL matching into multiple steps.  You might"
+" do this to provide cleaner abstractions in your application, or to "
+"support more flexible resource organization.  You can use the subroute "
+"decorator to do this.  The subroute decorator decorates a callable object"
+" that returns a resource.  The subroute uses the given route to match the"
+" beginning of the request path.  The resource returned by the callable is"
+" matched against the remainder of the path. Let's look at an example::"
+msgstr ""
+
+#: ../../index.txt:505
+msgid "With this example, if we visit::"
+msgstr ""
+
+#: ../../index.txt:519
+msgid ""
+"We'll get the summary for a user.  The URL will be matched in 2 steps. "
+"First, the path ``/employees/1`` will match the subroute.  The class is "
+"called with the request and employee id. Then the routes defined for the "
+"individual methods are searched.  The remainder of the path, "
+"``/summary.html``, matches the route for the summary method. (Note that "
+"we provided two decorators for the summary method, which allows us to get"
+" to it two ways.)  The methods were scanned for routes because we used "
+"the ``scan`` keyword argument."
+msgstr ""
+
+#: ../../index.txt:528
+msgid ""
+"The ``base`` method has a route that is an empty string. This is a "
+"special case that handles an empty path after matching a subroute.  The "
+"base method will be called for a URL like::"
+msgstr ""
+
+#: ../../index.txt:537
+msgid "which would redirect to::"
+msgstr ""
+
+#: ../../index.txt:548
+msgid ""
+"The ``documents`` method defines another subroute. Because we left off "
+"the route path, the method name is used.  This returns a Folder instance."
+" Let's look at the Folder class::"
+msgstr ""
+
+#: ../../index.txt:604
+msgid ""
+"The ``Folder`` and ``Document`` classes use the ``scan_class`` decorator."
+" The ``scan_class`` class decorator scans a class to make routes defined "
+"for it's methods available.  Using the ``scan_class`` decorator is "
+"equivalent to using the ``scan`` keyword with ``subroute`` decorator "
+"[#whyscan]_.  Now consider a URL::"
+msgstr ""
+
+#: ../../index.txt:615
+msgid "which outputs::"
+msgstr ""
+
+#: ../../index.txt:625
+msgid "The URL is matched in multiple steps:"
+msgstr ""
+
+#: ../../index.txt:627
+msgid "The path ``/employees/1`` matches the ``Employees`` class."
+msgstr ""
+
+#: ../../index.txt:629
+msgid ""
+"The path ``/documents`` matches the ``documents`` method, which returns a"
+" ``Folder`` using the employee documents dictionary."
+msgstr ""
+
+#: ../../index.txt:632
+msgid ""
+"The path ``/hobbies`` matches the ``subitem`` method of the ``Folder`` "
+"class, which returns the ``hobbies`` dictionary from the documents "
+"folder."
+msgstr ""
+
+#: ../../index.txt:635
+msgid ""
+"The path ``/sports.html`` also matches the ``subitem`` ``Folder`` method,"
+" which returns a ``Document`` using the text for the ``sports.html`` key."
+msgstr ""
+
+#: ../../index.txt:638
+msgid "5, The empty path matches the ``get`` method of the ``Document`` class."
+msgstr ""
+
+#: ../../index.txt:640
+msgid "Of course, the employee document tree can be arbitrarily deep."
+msgstr ""
+
+#: ../../index.txt:642
+msgid ""
+"The ``subroute`` decorator can be applied to any callable object that "
+"takes a request and route data and returns a resource."
+msgstr ""
+
+#: ../../index.txt:646
+msgid "Methods and REST"
+msgstr ""
+
+#: ../../index.txt:648
+msgid ""
+"When we define a resource, we can also specify the HTTP methods it will "
+"handle.  The ``resource`` and ``query`` decorators will handle GET, HEAD "
+"and POST methods by default. The ``post`` decorator handles POST and PUT "
+"methods. You can specify one or more methods when using the ``resource``,"
+" ``query``, and ``post`` decorators::"
+msgstr ""
+
+#: ../../index.txt:669
+msgid ""
+"In addition, there are other decordators, ``get``, ``head``, ``put``, "
+"``delete``, and ``options`` that define resources that accept the "
+"corresponding HTTP methods."
+msgstr ""
+
+#: ../../index.txt:673
+msgid ""
+"If multiple resources (resource, query, or post) in a module or class "
+"have the same route strings, the resource used will be selected based on "
+"both the route and the methods allowed. (If multiple resources match a "
+"request, the first one defined will be used [#order]_.)"
+msgstr ""
+
+#: ../../index.txt:716
+msgid ""
+"The ability to provide handlers for specific methods provides support for"
+" the `REST architectural style "
+"<http://en.wikipedia.org/wiki/Representational_State_Transfer>`_."
+msgstr ""
+
+#: ../../index.txt:721
+msgid "JSON Request Bodies"
+msgstr ""
+
+#: ../../index.txt:723
+msgid ""
+"If you use a JSON request body, with content type ``application/json``, "
+"defining a JSON object, bobo will pass properties from the JSON body as "
+"resource function arguments."
+msgstr ""
+
+#: ../../index.txt:730
+msgid "Beyond the bobo development server"
+msgstr ""
+
+#: ../../index.txt:732
+msgid ""
+"The bobo server makes it easy to get started.  Just run it with a source "
+"file and off you go.  When you're ready to deploy your application, "
+"you'll want to put your source code in an importable Python module (or "
+"package). Bobo publishes modules, not source files. The bobo server "
+"provides the convenience of converting a source file to a module."
+msgstr ""
+
+#: ../../index.txt:739
+msgid ""
+"The bobo command-line server is convenient for getting started, but "
+"production applications will usually be configured with selected servers "
+"and middleware using `Paste Deployment "
+"<http://pythonpaste.org/deploy/>`_. Bobo includes a Paste Deployment "
+"application implementation.  To use bobo with Paste Deployment, simply "
+"define an application section using the bobo egg::"
+msgstr ""
+
+#: ../../index.txt:757
+msgid ""
+"In this example, we're using the HTTP `server that is built into Paste "
+"<http://pythonpaste.org/modules/httpserver.html>`_."
+msgstr ""
+
+#: ../../index.txt:760
+msgid ""
+"The application section (``app:main``) contains bobo options, as well as "
+"application-specific options.  In this example, we used the "
+"``bobo_resources`` option to specify that we want to use resources found "
+"in the helloapp module, and the ``bobo_configure`` option to specify a "
+"configuration handler to be called with configuration data."
+msgstr ""
+
+#: ../../index.txt:766
+msgid ""
+"You can put application-specific options in the application section, "
+"which can be used by configuration handlers.  You can provide one or more"
+" configuration handlers using the bobo_configure option.  Each "
+"configuration handler is specified as a module name and global name "
+"[#globalexpr]_ separated by a colon."
+msgstr ""
+
+#: ../../index.txt:772
+msgid ""
+"Configuration handlers are called with a mapping object containing "
+"options from the application section and from the DEFAULT section, if "
+"present, with application options taking precedence."
+msgstr ""
+
+#: ../../index.txt:776
+msgid ""
+"To start the server, you'll run the paster script installed with "
+"PasteScript and specify the name of your configuration file::"
+msgstr ""
+
+#: ../../index.txt:781
+msgid ""
+"You'll need to install `Paste Script "
+"<http://pypi.python.org/pypi/PasteScript>`_ to use bobo with Paste "
+"Deployment."
+msgstr ""
+
+#: ../../index.txt:784
+msgid "See :ref:`wikiapaste` for a complete example."
+msgstr ""
+
+#: ../../index.txt:786
+msgid ""
+"You can use the ``-p`` option to control the port used. To find out more "
+"about the bobo server, use the ``-h`` option or see :ref:`boboserver`."
+msgstr ""
+
+#: ../../index.txt:790
+msgid ""
+"You might be wondering why we require the scan keyword in the subroute "
+"decorator to scan methods for resources.  The reason is that scan_class "
+"is somewhat invasive. It adds a instance method to the class, which may "
+"override an existing method. This should not be done implicitly."
+msgstr ""
+
+#: ../../index.txt:796
+msgid ""
+"More precisely, the resource with the lowest :term:`order` will be used."
+"  By default, a resources order is determined by the order of definition."
+"  You can override the order by passing an ``order`` keyword argument to "
+"a decorator. See :ref:`orderl`."
+msgstr ""
+
+#: ../../index.txt:801
+msgid ""
+"The name can be any Python expression that doesn't contain spaces. It "
+"will be evaluated using the module globals."
+msgstr ""
+
+#: ../../index.txt:805
+msgid "Questions and bug reports"
+msgstr ""
+
+#: ../../index.txt:807
+msgid ""
+"If you have questions, or want to discuss bobo, use the `bobo mailing "
+"list <http://groups.google.com/group/bobo-web>`_.  Send email to mailto"
+":bobo-web@googlegroups.com."
+msgstr ""
+
+#: ../../index.txt:811
+msgid ""
+"Report bugs using the `bobo bug tracker at Launchpad "
+"<https://bugs.launchpad.net/bobo>`_."
+msgstr ""
+

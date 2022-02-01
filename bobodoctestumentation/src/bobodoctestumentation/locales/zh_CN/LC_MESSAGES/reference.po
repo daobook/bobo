@@ -1,0 +1,1058 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2014, Jim Fulton
+# This file is distributed under the same license as the bobo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bobo 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-01 23:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference.txt:2
+msgid "Reference"
+msgstr ""
+
+#: ../../reference.txt:5
+msgid ":mod:`bobo` module documentation"
+msgstr ""
+
+#: bobo:1 boboserver:1 of
+msgid "Create WSGI-based web applications."
+msgstr ""
+
+#: bobo.Application:1 of
+msgid "Create a WSGI application."
+msgstr ""
+
+#: bobo.Application:3 of
+msgid ""
+"The DEFAULT argument, if given, is a dictionary of options. Keyword "
+"options override options given in the DEFAULT options."
+msgstr ""
+
+#: bobo.Application:6 of
+msgid "Option values are strings, typically read from ConfigParser files."
+msgstr ""
+
+#: bobo.Application:8 of
+msgid ""
+"The values used by bobo, ``bobo_resources``, ``bobo_configure`` and "
+"``bobo_errors``, can have comments.  Lines within these values are "
+"truncated at the first '#' characters."
+msgstr ""
+
+#: bobo.Application:12 of
+msgid "The one required option is bobo_resources:"
+msgstr ""
+
+#: bobo.Application:65 of
+msgid "bobo_resources"
+msgstr ""
+
+#: bobo.Application:15 of
+msgid "Specifies resources to be used."
+msgstr ""
+
+#: bobo.Application:17 of
+msgid "This option can be used to:"
+msgstr ""
+
+#: bobo.Application:19 of
+msgid "Specify modules to be scanned for resources."
+msgstr ""
+
+#: bobo.Application:20 of
+msgid "Include specific resources, rather than all resources in given modules."
+msgstr ""
+
+#: bobo.Application:21 of
+msgid "Override the order of resources given in modules."
+msgstr ""
+
+#: bobo.Application:22 of
+msgid "Override routes used for resources given in modules."
+msgstr ""
+
+#: bobo.Application:24 of
+msgid "Resources are specified on separate lines.  Resources take one of 4 forms:"
+msgstr ""
+
+#: bobo.Application:28 of
+msgid "module_name"
+msgstr ""
+
+#: bobo.Application:28 of
+msgid "Use the resources from the given module."
+msgstr ""
+
+#: ../../reference.txt:253 bobo.Application:35 of
+msgid "resource"
+msgstr ""
+
+#: bobo.Application:31 of
+msgid "Use the named resource."
+msgstr ""
+
+#: bobo.Application:33 of
+msgid ""
+"The resource is of the form: modulename:expression.  The object is "
+"obtained by evaluating the expression in the named module."
+msgstr ""
+
+#: bobo.Application:55 of
+msgid "route -> resource"
+msgstr ""
+
+#: bobo.Application:38 of
+msgid ""
+"The given route, possibly with placeholders, is handled by the given "
+"resource."
+msgstr ""
+
+#: bobo.Application:41 of
+msgid "The resource is of the form: modulename:expression."
+msgstr ""
+
+#: bobo.Application:43 of
+msgid ""
+"The object named by the resource must meet one of the following "
+"conditions:"
+msgstr ""
+
+#: bobo.Application:46 of
+msgid ""
+"It was created using one of the bobo decorators: ``resource``, ``post``, "
+"``query``, or ``subroute``."
+msgstr ""
+
+#: bobo.Application:49 of
+msgid ""
+"It has ``bobo_reroute`` method that takes the given route and returns a "
+"new resource. (The bobo decorators provide this.)"
+msgstr ""
+
+#: bobo.Application:52 of
+msgid "It is a class, in which case it is treated as a subroute."
+msgstr ""
+
+#: bobo.Application:54 of
+msgid ""
+"Newlines may be included between the\"->\" and the resource, allowing the"
+" specification to be split over multiple lines."
+msgstr ""
+
+#: bobo.Application:65 of
+msgid "route +> resource"
+msgstr ""
+
+#: bobo.Application:58 of
+msgid ""
+"The given route, which may not have placeholder, is added as a prefix of "
+"the given resource's route."
+msgstr ""
+
+#: bobo.Application:61 of
+msgid "The resource is of the form: modulename:expression, or just modulename."
+msgstr ""
+
+#: bobo.Application:64 of
+msgid ""
+"Newlines may be included between the\"+>\" and the resource, allowing the"
+" specification to be split over multiple lines."
+msgstr ""
+
+#: bobo.Application:67 of
+msgid "Bobo also used the following options:"
+msgstr ""
+
+#: bobo.Application:73 of
+msgid "bobo_configure"
+msgstr ""
+
+#: bobo.Application:70 of
+msgid ""
+"Specify one or more (whitespace-delimited) callables to be called with "
+"the configuration data passed to the application."
+msgstr ""
+
+#: bobo.Application:73 of
+msgid "Each callable is of the form: module_name:global_name"
+msgstr ""
+
+#: bobo.Application:101 of
+msgid "bobo_errors"
+msgstr ""
+
+#: bobo.Application:76 of
+msgid ""
+"Specify an object to be used for generating error responses. The value "
+"must be a module name or an object name of the form: "
+"``modulename:expression``.  The object must have the callable attributes:"
+msgstr ""
+
+#: bobo.Application:84 of
+msgid "not_found(request, method)"
+msgstr ""
+
+#: bobo.Application:82 of
+msgid "Generate a response when a resource can't be found."
+msgstr ""
+
+#: bobo.Application:84 of
+msgid "This should return a 404 response."
+msgstr ""
+
+#: bobo.Application:91 of
+msgid "method_not_allowed(request, method, methods)"
+msgstr ""
+
+#: bobo.Application:87 of
+msgid ""
+"Generate a response when the resource found doesn't allow the request "
+"method."
+msgstr ""
+
+#: bobo.Application:90 of
+msgid ""
+"This should return a 405 response and set the ``Allowed`` response header"
+" to the list of allowed headers."
+msgstr ""
+
+#: bobo.Application:96 of
+msgid "missing_form_variable(request, method, name)"
+msgstr ""
+
+#: bobo.Application:94 of
+msgid "Generate a response when a form variable is missing."
+msgstr ""
+
+#: bobo.Application:96 of
+msgid "The proper response in this situation isn't obvious."
+msgstr ""
+
+#: bobo.Application:101 of
+msgid "exception(request, method, ex_info)"
+msgstr ""
+
+#: bobo.Application:99 of
+msgid ""
+"Generate a response for the exception information given by exc_info.  "
+"This method is optional.  Bobo's default behavior is to simply re-raise "
+"the exception."
+msgstr ""
+
+#: bobo.Application:112 of
+msgid "bobo_handle_exceptions"
+msgstr ""
+
+#: bobo.Application:104 of
+msgid "Boolean indicating whether bobo should catch application exceptions."
+msgstr ""
+
+#: bobo.Application:106 of
+msgid ""
+"This defaults to True. It should be set to false if WSGI middleware "
+"should handle exceptions."
+msgstr ""
+
+#: bobo.Application:109 of
+msgid ""
+"If provides as a string (through configuration), it should be either "
+"'true' or 'false'."
+msgstr ""
+
+#: bobo.Application.build_response:1 of
+msgid "Build a response object from raw data."
+msgstr ""
+
+#: bobo.Application.build_response:3 of
+msgid ""
+"This method is used by bobo when an application returns data rather than "
+"a response object.  It can be overridden by subclasses to support "
+"alternative request implementations. (For example, some implementations "
+"may have response objects on a request that influence how a response is "
+"generated.)"
+msgstr ""
+
+#: bobo.Application.build_response:9 of
+msgid "The data object has several attributes:"
+msgstr ""
+
+#: bobo.Application.build_response:12 of
+msgid "status"
+msgstr ""
+
+#: bobo.Application.build_response:12 of
+msgid "Integer HTTP status code"
+msgstr ""
+
+#: bobo.Application.build_response:15 of
+msgid "body"
+msgstr ""
+
+#: bobo.Application.build_response:15 of
+msgid "Raw body data as returned from an application"
+msgstr ""
+
+#: bobo.Application.build_response:18 bobo.post:18 bobo.query:25
+#: bobo.resource:23 of
+msgid "content_type"
+msgstr ""
+
+#: bobo.Application.build_response:18 of
+msgid "The desired content type"
+msgstr ""
+
+#: bobo.Application.build_response:20 of
+msgid "headers"
+msgstr ""
+
+#: bobo.Application.build_response:21 of
+msgid "A list of header name/value pairs."
+msgstr ""
+
+#: bobo.NotFound:1 of
+msgid "A resource cannot be found."
+msgstr ""
+
+#: bobo.NotFound:3 of
+msgid ""
+"This exception can be conveniently raised by application code. Bobo will "
+"catch it and generate a not-found response object."
+msgstr ""
+
+#: bobo.early:1 of
+msgid "Return an order used for resources that should be searched early."
+msgstr ""
+
+#: bobo.early:3 of
+msgid ""
+"The function returns a larger integer each time it is called.  The value "
+"is smaller than values returned by the order or late functions."
+msgstr ""
+
+#: bobo.late:1 of
+msgid "Return an order used for resources that should be searched late."
+msgstr ""
+
+#: bobo.late:3 of
+msgid ""
+"The function returns a larger integer each time it is called.  The value "
+"is larger than values returned by the order or early functions."
+msgstr ""
+
+#: bobo.order:1 of
+msgid "Return an integer that can be used to order a resource."
+msgstr ""
+
+#: bobo.order:3 of
+msgid ""
+"The function returns a larger integer each time it is called.  A resource"
+" can use this to set it's ``bobo_order`` attribute."
+msgstr ""
+
+#: bobo.post:1 of
+msgid "Create a resource that passes POST data as arguments"
+msgstr ""
+
+#: bobo.post:3 of
+msgid "This function is used as a function decorator to define a resource."
+msgstr ""
+
+#: bobo.post:5 bobo.query:6 bobo.resource:6 of
+msgid "Arguments:"
+msgstr ""
+
+#: ../../reference.txt:232 bobo.post:13 bobo.query:13 bobo.resource:14 of
+msgid "route"
+msgstr ""
+
+#: bobo.post:8 bobo.query:9 bobo.resource:9 of
+msgid ""
+"The route to match against a request URL to determine if the decorated "
+"callable should be used to satisfy a request."
+msgstr ""
+
+#: bobo.post:12 bobo.query:12 bobo.resource:13 of
+msgid ""
+"if omitted, a route will be computed using the decorated callable's name "
+"with the content_type subtype used as an extension."
+msgstr ""
+
+#: bobo.post:16 bobo.query:23 bobo.resource:21 of
+msgid "The content_type for the response."
+msgstr ""
+
+#: bobo.post:18 bobo.query:25 bobo.resource:23 of
+msgid "The content type is ignored if the callable returns a response object."
+msgstr ""
+
+#: bobo.post:29 bobo.query:36 bobo.resource:34 of
+msgid "check"
+msgstr ""
+
+#: bobo.post:21 bobo.query:28 bobo.resource:26 of
+msgid "A check function."
+msgstr ""
+
+#: bobo.post:23 bobo.query:30 of
+msgid ""
+"If provided, the check function (or callable) will be called before the "
+"decorated function.  The check function is passed an instance, a request,"
+" and the decorated function.  If the resource is a method, then first "
+"argument is the instance the method was called on, otherwise it is None."
+"  If the check function returns a response, the response will be used "
+"instead of calling the decorated function."
+msgstr ""
+
+#: ../../reference.txt:211 bobo.post:35 bobo.query:42 bobo.resource:40 of
+msgid "order"
+msgstr ""
+
+#: bobo.post:32 bobo.query:39 bobo.resource:37 of
+msgid ""
+"The order controls how resources are searched when matching URLs.  "
+"Normally, resources are searched in order of evaluation.  Passing the "
+"result of calling ``bobo.early`` or ``bobo.late`` can cause resources to "
+"be searched early or late."
+msgstr ""
+
+#: bobo.post:37 bobo.query:44 bobo.resource:42 of
+msgid ""
+"The function may be used as a decorator directly without calling it. For "
+"example::"
+msgstr ""
+
+#: bobo.post:44 bobo.query:51 bobo.resource:49 of
+msgid "is equivalent to::"
+msgstr ""
+
+#: bobo.post:50 bobo.query:57 of
+msgid ""
+"The callable the decorator is applied to is analyzed to determine it's "
+"signature.  When the callable is called, the request, route data and "
+"request form data are used to satisfy any named arguments in the "
+"callable's signature.  For example, in the case of::"
+msgstr ""
+
+#: bobo.post:59 of
+msgid ""
+"when handling a request for: ``http://localhost/x``, with a post body of "
+"``b=1``, the request is passed to the ``bobo_request`` argument. the "
+"route data value ``'x'`` is passed to the argument ``a``, and the form "
+"data ``1`` is passed for ``b``."
+msgstr ""
+
+#: bobo.post:64 bobo.query:71 of
+msgid ""
+"Standard function metadata attributes ``func_code`` and ``func_defaults``"
+" are used to determine the signature and required arguments. The method "
+"attribute, ``im_func`` is used to determine if the callable is a method, "
+"in which case the first argument found in the signature is ignored."
+msgstr ""
+
+#: bobo.preroute:1 of
+msgid "Create a new resource by adding a route prefix"
+msgstr ""
+
+#: bobo.preroute:3 of
+msgid ""
+"The given route is used as a subroute that is matched before matching the"
+" given resource's route."
+msgstr ""
+
+#: bobo.preroute:6 of
+msgid ""
+"The resource can be a string, in which case it should be a global name, "
+"of the form ``module:expression``, or a module name.  If a module name is"
+" given, and the module doesn't have a bobo_response function, then a "
+"resource is computed that tries each of the resources found in the module"
+" in order."
+msgstr ""
+
+#: bobo.query:1 of
+msgid "Create a resource that passes form data as arguments"
+msgstr ""
+
+#: bobo.query:3 of
+msgid "Create a decorator that, when applied to a callable, creates a resource."
+msgstr ""
+
+#: bobo.query:20 bobo.resource:18 of
+msgid "method"
+msgstr ""
+
+#: bobo.query:16 bobo.resource:17 of
+msgid ""
+"The HTTP request method or methods that can be used. This can be either a"
+" string giving a single method name, or a sequence of strings."
+msgstr ""
+
+#: bobo.query:20 of
+msgid "The method argument defaults to the tuple ``('GET', 'HEAD', 'POST')``."
+msgstr ""
+
+#: bobo.query:66 of
+msgid ""
+"when handling a request for: ``http://localhost/x?b=1``, the request is "
+"passed to the ``bobo_request`` argument. the route data value ``'x'`` is "
+"passed to the argument ``a``, and the form data ``1`` is passed for "
+"``b``."
+msgstr ""
+
+#: bobo.redirect:1 of
+msgid "Generate a response to redirect to a URL."
+msgstr ""
+
+#: bobo.redirect:3 of
+msgid ""
+"The optional ``status`` argument can be used to supply a status other "
+"than 302.  The optional ``body`` argument can be used to specify a "
+"response body. If not specified, a default body is generated based on the"
+" URL given in the ``url`` argument."
+msgstr ""
+
+#: bobo.reroute:1 of
+msgid "Create a new resource from a re-routable resource."
+msgstr ""
+
+#: bobo.reroute:3 of
+msgid ""
+"The resource can be a string, in which case it should be a global name, "
+"of the form ``module:expression``."
+msgstr ""
+
+#: bobo.resource:1 of
+msgid "Create a resource"
+msgstr ""
+
+#: bobo.resource:3 of
+msgid ""
+"This function is used as a decorator to define a resource. It can be "
+"applied to any kind of callable, not just a function."
+msgstr ""
+
+#: bobo.resource:28 of
+msgid ""
+"If provided, the check function (or callable) will be called before the "
+"decorated callable.  The check function is passed an instance, a request,"
+" and the decorated callable.  If the resource is a method, then first "
+"argument is the instance the method was called on, otherwise it is None."
+"  If the check function returns a response, the response will be used "
+"instead of calling the decorated callable."
+msgstr ""
+
+#: bobo.resource:55 of
+msgid ""
+"The callable must take a request object as the first argument.  If the "
+"route has placeholders, then the callable must accept named parameters "
+"corresponding to the placeholders.  The named parameters must have "
+"defaults for any optional placeholders."
+msgstr ""
+
+#: bobo.resource:60 of
+msgid ""
+"Unlike the post and query decorators, this decorator doesn't introspect "
+"the callable it's applied to."
+msgstr ""
+
+#: bobo.resources:1 of
+msgid "Create a resource from multiple resources"
+msgstr ""
+
+#: bobo.resources:3 of
+msgid ""
+"A new resource is returned that works by searching the given resources in"
+" the order they're given."
+msgstr ""
+
+#: bobo.scan_class:1 of
+msgid "Create an instance bobo_response method for a class"
+msgstr ""
+
+#: bobo.scan_class:3 of
+msgid ""
+"Scan a class (including its base classes) for resources and generate a "
+"bobo_response method of the class that calls them."
+msgstr ""
+
+#: bobo.subroute:1 of
+msgid "Create a resource that matches a URL in multiple steps"
+msgstr ""
+
+#: bobo.subroute:3 of
+msgid ""
+"If called with a route or without any arguments, subroute returns an "
+"object that should then be called with a resource factory.  The resource "
+"factory will be called with a request and route data and should return a "
+"resource object.  For example::"
+msgstr ""
+
+#: bobo.subroute:13 of
+msgid ""
+"If no route is supplied, the ``__name__`` attribute of the callable is "
+"used."
+msgstr ""
+
+#: bobo.subroute:16 of
+msgid ""
+"The resource factory may return None to indicate that a resource can't be"
+" found on the subroute."
+msgstr ""
+
+#: bobo.subroute:19 of
+msgid ""
+"The scan argument, if given, should be given as a keyword parameter. It "
+"defaults to False.  If True, then the callable should be a class and a "
+"``bobo_response`` instance method will be added to the class that calls "
+"resources found by scanning the class and its base classes.  Passing a "
+"True ``scan`` argument is equivalent to calling ``scan_class``::"
+msgstr ""
+
+#: bobo.subroute:31 of
+msgid "``subroute`` can be passed a callable directly, as in::"
+msgstr ""
+
+#: bobo.subroute:40 of
+msgid ""
+"Which is equivalent to calling ``subroute`` without the callable and then"
+" passing the callable to the route::"
+msgstr ""
+
+#: bobo.subroute:50 of
+msgid ""
+"Note that in the example above, the scan argument isn't passed and "
+"defaults to False, so the class has to provide it's own ``bobo_response``"
+" method (or otherwise arrange that instances have one)."
+msgstr ""
+
+#: bobo.subroute:54 of
+msgid ""
+"The optional ``order`` parameter controls how resources are searched when"
+" matching URLs.  Normally, resources are searched in order of evaluation."
+"  Passing the result of calling ``bobo.early`` or ``bobo.late`` can cause"
+" resources to be searched early or late. It is usually a good idea to use"
+" ``bobo.late`` for subroutes that match any URL."
+msgstr ""
+
+#: ../../reference.txt:11
+msgid ":mod:`boboserver` module documentation"
+msgstr ""
+
+#: boboserver.Debug:1 of
+msgid "Post-mortem debugging middleware"
+msgstr ""
+
+#: boboserver.Debug:3 of
+msgid ""
+"This middleware catches uncaught exceptions and runs the "
+"``pdb.post_mortem`` debugging function, helping you to debug exceptions "
+"raised by your application."
+msgstr ""
+
+#: boboserver.Debug:7 of
+msgid ""
+"The Debug class implements the `Paste Deployment filter_app_factory "
+"protocol <http://pythonpaste.org/deploy/#paste-filter-app-factory>`_ and "
+"is exported as a ``paste.filter_app_factory`` entry point named "
+"``debug``."
+msgstr ""
+
+#: boboserver.Reload:1 of
+msgid "Module-reload middleware"
+msgstr ""
+
+#: boboserver.Reload:3 of
+msgid ""
+"This middleware can *only* be used with bobo applications.  It monitors a"
+" list of modules given by a ``modules`` keyword parameter and "
+"configuration option.  When a module changes, it reloads the module and "
+"reinitializes the bobo application."
+msgstr ""
+
+#: boboserver.Reload:8 of
+msgid ""
+"The Reload class implements the `Paste Deployment filter_app_factory "
+"protocol <http://pythonpaste.org/deploy/#paste-filter-app-factory>`_ and "
+"is exported as a ``paste.filter_app_factory`` entry point named "
+"``reload``."
+msgstr ""
+
+#: boboserver.server:1 of
+msgid "Bobo development server"
+msgstr ""
+
+#: boboserver.server:3 of
+msgid "The server function implements the bobo development server."
+msgstr ""
+
+#: boboserver.server:5 of
+msgid "It is exported as a ``console_script`` entry point named ``bobo``."
+msgstr ""
+
+#: boboserver.server:7 of
+msgid ""
+"An alternate application can be passed in to run the server with a "
+"different application implementation as long as application passed in "
+"subclasses bobo.Application."
+msgstr ""
+
+#: boboserver.static:1 of
+msgid "Create a resource that serves static files from a directory"
+msgstr ""
+
+#: ../../reference.txt:19
+msgid "The bobo server"
+msgstr ""
+
+#: ../../reference.txt:23
+msgid ""
+"The bobo server is a script that runs a development web server with a "
+"given source file or modules, and configuration options. The usage is:"
+msgstr ""
+
+#: ../../reference.txt:26
+msgid "bobo [options] [name=value ...]"
+msgstr ""
+
+#: ../../reference.txt:28
+msgid ""
+"Command-line arguments are either options, or configuration options of "
+"the form optionname=value."
+msgstr ""
+
+#: ../../reference.txt:31
+msgid "Options:"
+msgstr ""
+
+#: ../../reference.txt:34
+msgid ""
+"Specify a source file name to be published. It'll be converted to a "
+"module named ``bobo__main__`` and will have its __file__ set to the "
+"original file name."
+msgstr ""
+
+#: ../../reference.txt:39
+msgid "Specify a resource, such as a module or global, to publish."
+msgstr ""
+
+#: ../../reference.txt:42
+msgid ""
+"Provide post-mortem debugging.  If an uncaught exception is raised, use "
+"``pdb.post_mortem`` to debug it."
+msgstr ""
+
+#: ../../reference.txt:46
+msgid "Specify the port to listen on."
+msgstr ""
+
+#: ../../reference.txt:49
+msgid ""
+"Specify the name of a global to call with configuration data.  This is "
+"shorthand for ``bobo_configure=globalname``.  This is normally a name of "
+"the form ``modulename:expression``, however, if you supply just an "
+"expression, the module of the first resource will be used. For example, "
+"with a command like::"
+msgstr ""
+
+#: ../../reference.txt:57
+msgid "The ``config`` function in ``my.py`` will be used."
+msgstr ""
+
+#: ../../reference.txt:65
+msgid "-s ROUTE=PATH, --static ROUTE=PATH"
+msgstr ""
+
+#: ../../reference.txt:60
+msgid ""
+"Publish static files in the directory given by PATH at the route given by"
+" ROUTE."
+msgstr ""
+
+#: ../../reference.txt:63
+msgid ""
+"While there are middleware components that are better at publishing "
+"static resources for production use, this option makes it easier to get "
+"started during development."
+msgstr ""
+
+#: ../../reference.txt:67
+msgid ""
+"After the options, you can give configuration options as name=value "
+"pairs. These will be passed as configuration options to bobo and to any "
+"configuration handler you specify."
+msgstr ""
+
+#: ../../reference.txt:71
+msgid "Example::"
+msgstr ""
+
+#: ../../reference.txt:75
+msgid ""
+"In this example, we run the application in the source file fswiki.py. We "
+"pass configuration data to the application's ``config`` function. The "
+"options include the setting of ``'doc'`` for the directory option."
+msgstr ""
+
+#: ../../reference.txt:82
+msgid "Advanced: resource interfaces"
+msgstr ""
+
+#: ../../reference.txt:84
+msgid ""
+"Most applications will use the bobo-provided decorators to implement "
+"resources. These decorators create objects that provide certain methods "
+"and attributes.  Applications can implement these methods and attributes "
+"themselves to provide specialized behaviors.  For example, an application"
+" can implement bobo_response to provide a specialized object-look-up "
+"mechanism that doesn't use routes."
+msgstr ""
+
+#: ../../reference.txt:91
+msgid ""
+"The most important method is ``bobo_response``.  When bobo scans a module"
+" or class for resources, it looks for objects with this method. When "
+"handling a request, it calls this method on each of the objects found "
+"until a value is returned. See :ref:`resourceinterface` for more details."
+msgstr ""
+
+#: ../../reference.txt:97
+msgid ""
+"The optional methods, ``bobo_methods``, ``bobo_order`` and "
+"``bobo_response`` are used when scanning a module or class. Resources "
+"found in a module or class are ordered within the module or class based "
+"on values of their ``bobo_order`` attribute.  (If a resource doesn't have"
+" a ``bobo_order`` attribute, a value is used that is between those "
+"returned by ``bobo.order()`` and ``bobo.late()``."
+msgstr ""
+
+#: ../../reference.txt:104
+msgid ""
+"The ``bobo_route`` attribute is used to group resources within a module "
+"or class that have the same route.  Resources with the same route are "
+"treated as a single resource.  The route is matched and then a the first "
+"resource that accepts the request method is used."
+msgstr ""
+
+#: ../../reference.txt:109
+msgid ""
+"The optional :meth:`bobo_reroute` method is used by the bobo "
+":func:`bobo.reroute` function to compute a new resource from an existing "
+"resource and a new route."
+msgstr ""
+
+#: ../../reference.txt:116
+msgid "IResource"
+msgstr ""
+
+#: ../../reference.txt:120
+msgid ""
+"IResource is documented here to define an API that can be provided by "
+"application-defined resources.  Bobo doesn't actually define an IResource"
+" object."
+msgstr ""
+
+#: ../../reference.txt:126
+msgid "Find an object to publish at the given path."
+msgstr ""
+
+#: ../../reference.txt:128
+msgid "If an object is found, call it and return the result."
+msgstr ""
+
+#: ../../reference.txt:130
+msgid "If no object can be found, return None."
+msgstr ""
+
+#: ../../reference.txt:132
+msgid ""
+"If a resource matches a path but doesn't accept the request method, a "
+"405, method not allowed, response should be returned."
+msgstr ""
+
+#: ../../reference.txt:135
+msgid ""
+"If the return value isn't a response, it should be converted to a "
+"response."
+msgstr ""
+
+#: ../../reference.txt:140
+msgid ""
+"This optional attribute specifies the HTTP request methods supported by "
+"objects found by the resource.  See :ref:`routedetails`. If present, it "
+"muse be a sequence of method names, or None.  If it is None, then all "
+"methods are accepted."
+msgstr ""
+
+#: ../../reference.txt:147
+msgid ""
+"This optional attribute defines the precedence order for a resource.  See"
+" :ref:`routedetails`.  If present, it must be an integer. Resources with "
+"lower values for ``bobo_order`` are used before resources with higher "
+"values.  If the attribute isn't present, a very high value is assumed."
+msgstr ""
+
+#: ../../reference.txt:153
+msgid ""
+"Typically, :func:`order` is called to get a value for bobo_order when a "
+"resource is defined."
+msgstr ""
+
+#: ../../reference.txt:158
+msgid ""
+"This optional attribute defines the *complete* route for a resource.  See"
+" :ref:`routedetails`.  If present, it must be an string."
+msgstr ""
+
+#: ../../reference.txt:163
+msgid "Return a new resource for the given route."
+msgstr ""
+
+#: ../../reference.txt:166
+msgid "Advanced: subclassing bobo.Application"
+msgstr ""
+
+#: ../../reference.txt:168
+msgid ""
+"The bobo WSGI application, :class:`bobo.Application` can be subclassed to"
+" handle alternate request implementations. This is to allow applications "
+"written for frameworks using request implementations other than Webob to "
+"be used with bobo.  A subclass should override the :meth:`__call__` and "
+":meth:`build_response` methods."
+msgstr ""
+
+#: ../../reference.txt:174
+msgid "The :meth:`__call__` method should:"
+msgstr ""
+
+#: ../../reference.txt:176
+msgid "Create a request."
+msgstr ""
+
+#: ../../reference.txt:177
+msgid "Call ``self.bobo_response(request, path, method)`` to get a response."
+msgstr ""
+
+#: ../../reference.txt:179
+msgid ""
+"Return the result of calling the response with the ``environ`` and "
+"``start_response`` arguments passed to :meth:`__call__`."
+msgstr ""
+
+#: ../../reference.txt:182
+msgid "The :meth:`__call__` should look like::"
+msgstr ""
+
+#: ../../reference.txt:192
+msgid ""
+"The request should implement as much of the `WebOb request API "
+"<http://pythonpaste.org/webob/reference.html#id1>`_ as practical. It must"
+" implement the attributes used by bobo: ``path_info``, ``method``, "
+"``params``, and ``POST``."
+msgstr ""
+
+#: ../../reference.txt:197
+msgid ""
+"The :meth:`build_response` method is used to build a response when an "
+"application function returns a value that isn't a response.  See the "
+":class:`bobo.Application` for more information on this method."
+msgstr ""
+
+#: ../../reference.txt:201
+msgid ""
+"New application implementations will also want to provide matching "
+"development servers.  The :func:`boboserver.server` entry point accepts "
+"an alternate application object, making implementation of alternate "
+"development servers trivial."
+msgstr ""
+
+#: ../../reference.txt:207
+msgid "Glossary"
+msgstr ""
+
+#: ../../reference.txt:213
+msgid "The order in which a resource is searched relative to other resources."
+msgstr ""
+
+#: ../../reference.txt:226
+msgid "request"
+msgstr ""
+
+#: ../../reference.txt:228
+msgid ""
+"An object that contains information about a web request.  This is a "
+"`Webob request object <http://pythonpaste.org/webob/#request>`_. See the "
+"Webob documentation to get details of its interface."
+msgstr ""
+
+#: ../../reference.txt:255
+msgid "An object that has a bobo_response method. See :ref:`routedetails`."
+msgstr ""
+
+#: ../../reference.txt:215
+msgid "response"
+msgstr ""
+
+#: ../../reference.txt:217
+msgid ""
+"An object that represents a web response.  This is usually a `Webob "
+"response <http://pythonpaste.org/webob/#response>`_, but it may be any "
+"callable object that implements the `WSGI application interface "
+"<http://www.python.org/dev/peps/pep-0333/#the-application-framework-"
+"side>`_."
+msgstr ""
+
+#: ../../reference.txt:223
+msgid ""
+"Applications will typically return strings that are converted to "
+"responses by bobo, or will construct and return Webob response objects."
+msgstr ""
+
+#: ../../reference.txt:234
+msgid "A URL pattern expressed as a path with placeholders, as in::"
+msgstr ""
+
+#: ../../reference.txt:238
+msgid ""
+"Routes are inspired by the `Ruby on Rails Routing "
+"<http://api.rubyonrails.org/classes/ActionController/Routing.html>`_ "
+"system."
+msgstr ""
+
+#: ../../reference.txt:242
+msgid ""
+"Placeholders are Python identifiers preceded by \"/:\".  If a placeholder"
+" is followed by a question mark, it is optional.  A placeholder may be "
+"followed by an extension.  When a route matches a URL, the URL text "
+"corresponding to the placeholders is passed to the application as keyword"
+" parameters."
+msgstr ""
+
+#: ../../reference.txt:247
+msgid "route data"
+msgstr ""
+
+#: ../../reference.txt:249
+msgid ""
+"Values for placeholders resulting from matching a URL against a route.  "
+"For example, matching the URL: ``http://localhost/a/b`` against the route"
+" ``/:x/:y/:z?`` results in the route data ``{'x': 'a', 'y': 'b'}``."
+msgstr ""
+
+#: ../../reference.txt:256
+msgid "routes"
+msgstr ""
+
+#: ../../reference.txt:258
+msgid "See route."
+msgstr ""
+

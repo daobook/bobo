@@ -1,0 +1,660 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2014, Jim Fulton
+# This file is distributed under the same license as the bobo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bobo 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-01 23:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../more.txt:2
+msgid "Additional topics"
+msgstr ""
+
+#: ../../more.txt:5
+msgid "Check functions"
+msgstr ""
+
+#: ../../more.txt:7
+msgid ""
+"When using the ``query``, ``post``, and ``resource`` decorators, you can "
+"define a check function.  Before calling the decorated function, the "
+"check function is called.  If the check function returns a response, the "
+"check function's response is used rather than calling the decorated "
+"function.  A common use of check functions is for authorization::"
+msgstr ""
+
+#: ../../more.txt:46
+msgid ""
+"In this example, we use a very simple authorization model.  We can update"
+" data if the user is authenticated.  Check functions take 3 positional "
+"arguments:"
+msgstr ""
+
+#: ../../more.txt:50
+msgid "an instance"
+msgstr ""
+
+#: ../../more.txt:51
+msgid "a request"
+msgstr ""
+
+#: ../../more.txt:52
+msgid "the decorated function (or callable)"
+msgstr ""
+
+#: ../../more.txt:54
+msgid ""
+"If a resource is a method, the first argument passed to the check "
+"function will be the instance the method is applied to. Otherwise, it "
+"will be None."
+msgstr ""
+
+#: ../../more.txt:59
+msgid "Decorated objects can be used directly"
+msgstr ""
+
+#: ../../more.txt:61
+msgid ""
+"Functions or callables decorated by the ``query``, ``post``, ``resource``"
+" and ``subroute`` decorators can be called as if they were undecorated. "
+"For example, with::"
+msgstr ""
+
+#: ../../more.txt:74
+msgid "We can call the get function directly:"
+msgstr ""
+
+#: ../../more.txt:79
+msgid ""
+"Similarly, classes decorated with the subroute decorator can be used "
+"normally. The subroute decorator simply adds a ``bobo_response`` class "
+"method that allows the class to be used as a :term:`resource`."
+msgstr ""
+
+#: ../../more.txt:86
+msgid "Configured routes"
+msgstr ""
+
+#: ../../more.txt:88
+msgid ""
+"For simplicity, you normally specify routes in your application code. For"
+" example, in::"
+msgstr ""
+
+#: ../../more.txt:95
+msgid "You specify 2 things:"
+msgstr ""
+
+#: ../../more.txt:97
+msgid "Which URLs should be handled by the hello function."
+msgstr ""
+
+#: ../../more.txt:99
+msgid "How to call the function."
+msgstr ""
+
+#: ../../more.txt:101
+msgid ""
+"In most cases, being able to specify this information one place is "
+"convenient."
+msgstr ""
+
+#: ../../more.txt:104
+msgid ""
+"Sometimes, however, you may want to separate routes from your "
+"implementation to:"
+msgstr ""
+
+#: ../../more.txt:107
+msgid "Manage the routes in one place,"
+msgstr ""
+
+#: ../../more.txt:109
+msgid "Omit some routes defined in the implementation,"
+msgstr ""
+
+#: ../../more.txt:111
+msgid "Change the routes or search order from what's given in the implementation."
+msgstr ""
+
+#: ../../more.txt:114
+msgid ""
+"Bobo provides a way to explicitly configure the routes as part of "
+"configuration. When you specify resources, you can control the order "
+"resources are searched and override the routes used."
+msgstr ""
+
+#: ../../more.txt:118
+msgid ""
+"The ``bobo_resources`` option takes a number of resources separated by "
+"newlines. Resources take one of 4 forms:"
+msgstr ""
+
+#: ../../more.txt:122
+msgid "modulename"
+msgstr ""
+
+#: ../../more.txt:122
+msgid "Use all of the resources found in the module."
+msgstr ""
+
+#: ../../more.txt:127
+msgid "modulename:expression"
+msgstr ""
+
+#: ../../more.txt:125
+msgid ""
+"Use the given :term:resource.  The resource is specified using a module "
+"name and an expression (typically just a global name) that's executed in "
+"the module's global scope."
+msgstr ""
+
+#: ../../more.txt:137
+msgid "route -> modulename:expression"
+msgstr ""
+
+#: ../../more.txt:130
+msgid ""
+"Use the given object with the given route. The object is specified using "
+"a module name and an expression (typically just a global name) that's "
+"executed in the module's global scope."
+msgstr ""
+
+#: ../../more.txt:134
+msgid ""
+"The object must have a ``bobo_route`` method, as objects created using "
+"one of the ``query``, ``post``, ``resource`` or ``subroute`` decorators "
+"do, or the object must be a class with a constructor that takes a request"
+" and route data and returns a resource."
+msgstr ""
+
+#: ../../more.txt:144
+msgid "route +> modulename:expression"
+msgstr ""
+
+#: ../../more.txt:140
+msgid ""
+"Use a :term:`resource`, but add the given route as a prefix of the "
+"resources route. The resource is given by a module name and expression."
+msgstr ""
+
+#: ../../more.txt:144
+msgid "The given route may not have placeholders."
+msgstr ""
+
+#: ../../more.txt:146
+msgid ""
+"Resources are separated by newlines.  The string ``->``, or ``+>`` at the"
+" end of a line acts as a line continuation character."
+msgstr ""
+
+#: ../../more.txt:149
+msgid ""
+"To show how this works, we'll look at an example.  We'll create a 2 "
+"modules with some resources in them. First, people::"
+msgstr ""
+
+#: ../../more.txt:177
+msgid "Then docs::"
+msgstr ""
+
+#: ../../more.txt:230
+msgid ""
+"We use the ``bobo_resources`` option to control the URLs we access these "
+"with::"
+msgstr ""
+
+#: ../../more.txt:257
+msgid "This example shows a number of things:"
+msgstr ""
+
+#: ../../more.txt:259
+msgid ""
+"We can use blank lines and comments.  Route configurations can get "
+"involved, so comments are useful. In the example, comments are used to "
+"assign numbers to the individual routes so we can refer to them."
+msgstr ""
+
+#: ../../more.txt:263
+msgid "We have several form of resource:"
+msgstr ""
+
+#: ../../more.txt:265
+msgid "Use an existing resource with its original route."
+msgstr ""
+
+#: ../../more.txt:267 ../../more.txt:285 ../../more.txt:305 ../../more.txt:324
+#: ../../more.txt:343 ../../more.txt:362
+msgid "If we use a URL like::"
+msgstr ""
+
+#: ../../more.txt:273 ../../more.txt:292 ../../more.txt:312 ../../more.txt:331
+#: ../../more.txt:350 ../../more.txt:369
+msgid "We'll get output::"
+msgstr ""
+
+#: ../../more.txt:283
+msgid "Use the resources from a module with their original routes."
+msgstr ""
+
+#: ../../more.txt:302
+msgid "Define a new route for an existing resource."
+msgstr ""
+
+#: ../../more.txt:322
+msgid "Define a new route for an existing subroute."
+msgstr ""
+
+#: ../../more.txt:341
+msgid "Use all of the routes from a module with a prefix added."
+msgstr ""
+
+#: ../../more.txt:360
+msgid "Use an existing route adding a prefix."
+msgstr ""
+
+#: ../../more.txt:392
+msgid "Configuring routes in python"
+msgstr ""
+
+#: ../../more.txt:394
+msgid ""
+"To configure routes in Python, you can use the ``bobo.resources`` "
+"function::"
+msgstr ""
+
+#: ../../more.txt:446
+msgid ""
+"The ``resources`` function takes an iterable of resources, where the "
+"resources can be resource objects, or strings naming resource objects or "
+"modules."
+msgstr ""
+
+#: ../../more.txt:450
+msgid ""
+"The ``reroute`` function takes a route and an existing resource and "
+"returns a new resource with the given route.  The resource must have a "
+"``bobo_route`` method, as resources created using one of the ``query``, "
+"``post``, ``resource`` or ``subroute`` decorators do, or the resource "
+"must be a class with a constructor that takes a request and route data "
+"and returns a resource."
+msgstr ""
+
+#: ../../more.txt:457
+msgid ""
+"The ``preroute`` function takes a route and a resource and returns a new "
+"resource that uses the given route as a subroute to get to the resource."
+msgstr ""
+
+#: ../../more.txt:461
+msgid ""
+"The example above is almost equivalent to the earlier example.  If the "
+"module containing the code above is given to the bobo_resources option, "
+"then the resources defined by the call will be used.  It is slightly "
+"different from the earlier example, because if the module defines any "
+"other resources, they'll be used as well."
+msgstr ""
+
+#: ../../more.txt:468
+msgid "Resource modules"
+msgstr ""
+
+#: ../../more.txt:470
+msgid ""
+"Rather than defining a resource in a module, we can make a module a "
+"resource by defining a ``bobo_response`` module attribute::"
+msgstr ""
+
+#: ../../more.txt:523
+msgid ""
+"Here, rather than adding a new resource to the module, we've copied the "
+"``bobo_response`` method from a new resource to the module, making the "
+"module a resource.  When bobo scans a module, it first checks whether the"
+" module has a ``bobo_response`` attribute. If it does, then bobo uses the"
+" module as a resource and doesn't scan the module for resources.  This "
+"way, we control precisely which resources will be used, given the module."
+msgstr ""
+
+#: ../../more.txt:531
+msgid ""
+"This example also illustrates that, rather than passing strings to the "
+"``resources``, ``reroute`` and ``preroute`` functions, we can pass "
+"objects directly."
+msgstr ""
+
+#: ../../more.txt:536
+msgid "Creating bobo-based WSGI applications from Python"
+msgstr ""
+
+#: ../../more.txt:538
+msgid ""
+"Usually, bobo applications are created using the bobo development server "
+"or through a PasteDeployment configuration.  You can also create "
+"applications in Python using the ``bobo.Application`` constructor. You "
+"call the constructor with keyword arguments:"
+msgstr ""
+
+#: ../../more.txt:547
+msgid "bobo_resources"
+msgstr ""
+
+#: ../../more.txt:544
+msgid "The bobo resources to be used in the application"
+msgstr ""
+
+#: ../../more.txt:546
+msgid ""
+"This is either a string defining resources, or an iterable of modules or "
+"resource objects."
+msgstr ""
+
+#: ../../more.txt:556
+msgid "bobo_configuration"
+msgstr ""
+
+#: ../../more.txt:550
+msgid "A list of configuration functions."
+msgstr ""
+
+#: ../../more.txt:552
+msgid ""
+"This is either a string consistning whitespace-delimited list of "
+"configuration callable names, or an iterable of callables. The callables "
+"will be called with the keyword arguments passed to ``bobo.Application``."
+" This allows you to pass configuration options when defining an "
+"application."
+msgstr ""
+
+#: ../../more.txt:561
+msgid "bobo_errors"
+msgstr ""
+
+#: ../../more.txt:559
+msgid ""
+"A custom error-handler object.  This is either a string name, of the form"
+" ``'modulename:expression'``, or a Python object defining one or more of "
+"the error handling functions."
+msgstr ""
+
+#: ../../more.txt:567
+msgid "bobo_handle_exceptions"
+msgstr ""
+
+#: ../../more.txt:564
+msgid ""
+"A boolean flag indicating whether bobo should handle uncaught application"
+" exceptions. If set to ``False`` or ``'false'``, then bobo won't catch "
+"exceptions. This is useful if you want middleware to handle exceptions."
+msgstr ""
+
+#: ../../more.txt:569
+msgid ""
+"Here's a somewhat contrived example that illustrates creating an "
+"application object from Python, passing objects rather than strings::"
+msgstr ""
+
+#: ../../more.txt:609
+msgid "Error response generation"
+msgstr ""
+
+#: ../../more.txt:611
+msgid "There are four cases for which bobo has to generate error responses:"
+msgstr ""
+
+#: ../../more.txt:613
+msgid ""
+"When a resource can't be found, bobo generates a \"404 Not Found\" "
+"response."
+msgstr ""
+
+#: ../../more.txt:615
+msgid ""
+"When a resource can be found but it doesn't allow the request method, "
+"bobo generates a \"405 Method Not Allowed\" response."
+msgstr ""
+
+#: ../../more.txt:617
+msgid ""
+"When a ``query`` or ``post`` decorated function requires a parameter and "
+"the parameter is isn't in the given form data, bobo generates a \"403 "
+"Forbidden\" response with a body that indicates the missing parameter."
+msgstr ""
+
+#: ../../more.txt:621
+msgid ""
+"When a route handler raises an exception, bobo generates a \"500 Internal"
+" Server Error\" response."
+msgstr ""
+
+#: ../../more.txt:625
+msgid "For each of these responses, bobo generates a small HTML body."
+msgstr ""
+
+#: ../../more.txt:627
+msgid ""
+"Applications can take over generating error responses by specifying a "
+"``bobo_errors`` option that specified an object or a module defining 3 "
+"callable attributes:"
+msgstr ""
+
+#: ../../more.txt:634
+msgid "not_found(request, method)"
+msgstr ""
+
+#: ../../more.txt:632
+msgid "Generate a response when a resource can't be found."
+msgstr ""
+
+#: ../../more.txt:634
+msgid "This should return a 404 response."
+msgstr ""
+
+#: ../../more.txt:641
+msgid "method_not_allowed(request, method, methods)"
+msgstr ""
+
+#: ../../more.txt:637
+msgid ""
+"Generate a response when the resource found doesn't allow the request "
+"method."
+msgstr ""
+
+#: ../../more.txt:640
+msgid ""
+"This should return a 405 response and set the ``Allowed`` response header"
+" to the list of allowed headers."
+msgstr ""
+
+#: ../../more.txt:646
+msgid "missing_form_variable(request, method, name)"
+msgstr ""
+
+#: ../../more.txt:644
+msgid "Generate a response when a form variable is missing."
+msgstr ""
+
+#: ../../more.txt:646
+msgid "The proper response in this situation isn't obvious."
+msgstr ""
+
+#: ../../more.txt:648
+msgid ""
+"The value given for the ``bobo_errors`` option is either a module name, "
+"or an object name of the form: \"module_name:expression\"."
+msgstr ""
+
+#: ../../more.txt:651
+msgid "Let's look at an example. First, an ``errorsample`` module::"
+msgstr ""
+
+#: ../../more.txt:678
+msgid "Then a configuration file::"
+msgstr ""
+
+#: ../../more.txt:691
+msgid "If we use the URL::"
+msgstr ""
+
+#: ../../more.txt:698
+msgid "We'll get the response::"
+msgstr ""
+
+#: ../../more.txt:710
+msgid "But if we use::"
+msgstr ""
+
+#: ../../more.txt:717 ../../more.txt:736
+msgid "We'll get::"
+msgstr ""
+
+#: ../../more.txt:729
+msgid "If we use::"
+msgstr ""
+
+#: ../../more.txt:748
+msgid "If we make a POST to the same URL, we'll get::"
+msgstr ""
+
+#: ../../more.txt:762
+msgid ""
+"We can use an object with methods rather than module-level functions to "
+"generate error responses. Here we define an ``errorsample2`` module that "
+"defines an class with methods for generating error responses::"
+msgstr ""
+
+#: ../../more.txt:788
+msgid "In the configuration file, we specify an object, rather than a module::"
+msgstr ""
+
+#: ../../more.txt:797
+msgid ""
+"Note that in this example, rather than just using a global name, we use "
+"an expression to specify the errors object."
+msgstr ""
+
+#: ../../more.txt:817
+msgid "Uncaught exceptions"
+msgstr ""
+
+#: ../../more.txt:819
+msgid ""
+"Normally, bobo does not let uncaught exceptions propagate; however, if "
+"the ``bobo_handle_exceptions`` option is set to ``False`` (or "
+"``'false'``) or if a request environment has the key "
+"`x-wsgiorg.throw_errors`, any uncaught exceptions will be raised. This is"
+" useful if you want WSGI middleware to handle exceptions."
+msgstr ""
+
+#: ../../more.txt:825
+msgid ""
+"If you want to provide custom handling of uncaught exceptions, you can "
+"include an ``exception`` method in the object you give to "
+"``bobo_errors``."
+msgstr ""
+
+#: ../../more.txt:907
+msgid "Ordering Resources"
+msgstr ""
+
+#: ../../more.txt:909
+msgid ""
+"When looking for resources (or sub-resources) that match a request, "
+"resources are tried in order, where the default order is the order of "
+"definition. The order can be overridden by passing an order using the "
+"``order`` keyword argument to the bobo decorators [#customorder]_. The "
+"results of calling the functions ``bobo.early()`` and ``bobo.late()`` are"
+" typically the only values that are useful to pass. It is usually a good "
+"idea to use ``bobo.late()`` for subroutes that match any path, so that "
+"more specific routes are tried earlier.  If multiple resources that use "
+"``bobo.late()`` (or ``bobo.early()``) match a path, the first one defined"
+" will be used."
+msgstr ""
+
+#: ../../more.txt:920
+msgid ""
+"Advanced applications may provide their own :term:`resource` "
+"implementations.  Custom resource implementations must implement the "
+"resource interface and will provide an order using the ``bobo_order`` "
+"attribute.  See :ref:`resourceinterface`."
+msgstr ""
+
+#: ../../more.txt:926
+msgid "Additional Helpers"
+msgstr ""
+
+#: ../../more.txt:928
+msgid ""
+"In addition to `query` and `post`, bobo provides route decorators for "
+"handling specific HTTP methods.  We'll construct a simple RESTful app to "
+"demonstrate."
+msgstr ""
+
+#: ../../more.txt:993
+msgid "Backtracking"
+msgstr ""
+
+#: ../../more.txt:995
+msgid ""
+"When handling a request, if bobo finds a resource that matches the route "
+"but does not accept the request method, it will continue looking for "
+"matching resources; if it eventually finds none, it will then generate a "
+"\"405 Method Not Allowed\" response."
+msgstr ""
+
+#: ../../more.txt:1049
+msgid ""
+"We have a resource that matches the route \"/event/create\", but it is "
+"for POST requests.  If we make a GET request, the second resource with "
+"the matching route that can handle GET requests gets called."
+msgstr ""
+
+#: ../../more.txt:1056
+msgid "Of course POST requests go to the appropriate resource."
+msgstr ""
+
+#: ../../more.txt:1061
+msgid ""
+"If we perform a HEAD request for \"/event/create\", we get a 405 "
+"response, as no resource is able to handle the method.  The \"Allow\" "
+"header indicates all of the request methods that are valid for the "
+"particular path."
+msgstr ""
+
+#: ../../more.txt:1068
+msgid "The backtracking behavior works with subroutes."
+msgstr ""
+
+#: ../../more.txt:1079
+msgid ""
+"If the first matching subroute returns a resource with no handlers for "
+"the request method, the next matching subroute is tried."
+msgstr ""
+
+#: ../../more.txt:1085
+msgid ""
+"If no resource is able to handle the request method, we get a 405 "
+"response with an Allow header."
+msgstr ""
+
+#: ../../more.txt:1094
+msgid "Automatic encoding of redirect destinations"
+msgstr ""
+
+#: ../../more.txt:1096
+msgid ""
+"Since URLs are often computed based on request data, it's easy for "
+"applications to generate Unicode URLs.  For this reason, unicode URL's "
+"passed to ``bobo.redirect`` are UTF-8 encoded."
+msgstr ""
+
