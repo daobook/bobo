@@ -17,17 +17,16 @@ version = '2.2.0'
 from setuptools import setup
 
 setup(
-    name = name,
-    version = version,
-    author = "Jim Fulton",
-    author_email = "jim@zope.com",
-    description = "Bobo tests and documentation",
-    license = "ZPL 2.1",
-    url='http://www.python.org/pypi/'+name,
+    name=name,
+    version=version,
+    author="Jim Fulton",
+    author_email="jim@zope.com",
+    description="Bobo tests and documentation",
+    license="ZPL 2.1",
+    url=f'http://www.python.org/pypi/{name}',
     long_description=open('README.txt').read(),
-
-    packages = ['bobodoctestumentation'],
-    package_dir = {'':'src'},
-    package_data = {'bobodoctestumentation': ['*.txt', '*.test', '*.html']},
-    install_requires = ['manuel', 'six', 'webtest', 'zope.testing'],
-    )
+    packages=['bobodoctestumentation'],
+    package_dir={'': 'src'},
+    package_data={'bobodoctestumentation': ['*.txt', '*.test', '*.html']},
+    install_requires=['manuel', 'six', 'webtest', 'zope.testing'],
+)

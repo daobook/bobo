@@ -23,14 +23,13 @@ def logout(bobo_request, where=None):
     return response
 
 def login_url(request):
-    return request.application_url+'/login.html?where='+request.url
+    return f'{request.application_url}/login.html?where={request.url}'
 
 def logout_url(request):
-    return request.application_url+'/logout.html?where='+request.url
+    return f'{request.application_url}/logout.html?where={request.url}'
 
 def who(request):
-    user = request.remote_user
-    if user:
+    if user := request.remote_user:
         return '''
         <div style="float:right">Hello: %s
         <a href="%s">log out</a></div>
@@ -75,11 +74,7 @@ def get(bobo_request, name, edit=None):
             return open(edit_html).read() % dict(
                 name=name, body=body, action='Edit')
 
-        if user:
-            edit = ' (<a href="%s?edit=1">edit</a>)' % name
-        else:
-            edit = ''
-
+        edit = ' (<a href="%s?edit=1">edit</a>)' % name if user else ''
         return '''<html><head><title>%(name)s</title></head><body>
         <div style="float:left">%(name)s%(edit)s</div>%(who)s
         <hr style="clear:both" />%(body)s</body></html>

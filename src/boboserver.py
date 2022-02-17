@@ -53,7 +53,7 @@ class Directory:
 
     @bobo.query('')
     def base(self, bobo_request):
-        return bobo.redirect(bobo_request.url+'/')
+        return bobo.redirect(f'{bobo_request.url}/')
 
     @bobo.query('/')
     def index(self):
@@ -75,10 +75,7 @@ class Directory:
         path = os.path.abspath(os.path.join(self.path, name))
         if not path.startswith(self.root):
             raise bobo.NotFound
-        if os.path.isdir(path):
-            return Directory(self.root, path)
-        else:
-            return File(path)
+        return Directory(self.root, path) if os.path.isdir(path) else File(path)
 
 
 bobo.scan_class(Directory)

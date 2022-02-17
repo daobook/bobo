@@ -201,8 +201,7 @@ class Application:
 
         bobo_resources = config.get('bobo_resources', '')
         if isinstance(bobo_resources, six.string_types):
-            bobo_resources = _uncomment(bobo_resources, True)
-            if bobo_resources:
+            if bobo_resources := _uncomment(bobo_resources, True):
                 self.handlers = _route_config(bobo_resources)
             else:
                 raise ValueError("Missing bobo_resources option.")
@@ -634,10 +633,9 @@ class _Handler:
                  method=None, params=None, check=None, content_type=None,
                  order_=None):
         if route is None:
-            route = '/' + handler.__name__
-            ext = _ext_re(content_type)
-            if ext:
-                route += '.' + ext.group(1)
+            route = f'/{handler.__name__}'
+            if ext := _ext_re(content_type):
+                route += f'.{ext.group(1)}'
         self.bobo_route = route
         if isinstance(method, six.string_types):
             method = (method, )
@@ -1418,10 +1416,10 @@ def subroute(route=None, scan=False, order=None):
     """
 
     if route is None:
-        return lambda ob: _subroute('/'+ob.__name__, ob, scan)
+        return lambda ob: _subroute(f'/{ob.__name__}', ob, scan)
     if isinstance(route, six.string_types):
         return lambda ob: _subroute(route, ob, scan)
-    return _subroute('/'+route.__name__, route, scan)
+    return _subroute(f'/{route.__name__}', route, scan)
 
 
 class _subroute_class_method(object):
@@ -1467,8 +1465,7 @@ def _subroute_class(route, ob):
 
     def bobo_response(self, request, path, method):
         for matcher in matchers:
-            route_data = matcher(route, path)
-            if route_data:
+            if route_data := matcher(route, path):
                 route_data, path = route_data
                 resource = ob(request, **route_data)
                 if resource is not None:

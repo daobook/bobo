@@ -29,8 +29,8 @@ def setUp(test):
     setupstack.setUpDirectory(test)
 
     for i in ('1', '2'):
-        name = 'testmodule'+i
-        module = types.ModuleType('bobo.'+name)
+        name = f'testmodule{i}'
+        module = types.ModuleType(f'bobo.{name}')
         setattr(bobo, name, module)
         sys.modules[module.__name__] = module
         setupstack.register(test, delattr, bobo, name)
@@ -59,15 +59,14 @@ def get_port():
 
     Raises RuntimeError after 10 tries.
     """
-    for i in range(10):
+    for _ in range(10):
         port = random.randrange(20000, 30000)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
-            try:
-                s.connect(('localhost', port))
-            except socket.error:
-                # Perhaps we should check value of error too.
-                return port
+            s.connect(('localhost', port))
+        except socket.error:
+            # Perhaps we should check value of error too.
+            return port
         finally:
             s.close()
     raise RuntimeError("Can't find port")
